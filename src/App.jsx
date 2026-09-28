@@ -1,4 +1,5 @@
 import { ReadingModeProvider } from './context/ReadingModeContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 import { useActiveSection } from './hooks/useActiveSection.js';
 import { navItems } from './data/navigation.js';
 import Sidebar from './components/layout/Sidebar.jsx';
@@ -16,21 +17,23 @@ export default function App() {
   const activeId = useActiveSection(navItems.map((item) => item.id));
 
   return (
-    <ReadingModeProvider>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <MobileHeader activeId={activeId} />
-      <div className={styles.shell}>
-        <Sidebar activeId={activeId} />
-        <main id="main" className={styles.main}>
-          <Hero />
-          <LookingFor />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
-    </ReadingModeProvider>
+    <ThemeProvider>
+      <ReadingModeProvider>
+        <a className="skip-link" href="#main">Skip to content</a>
+        <MobileHeader activeId={activeId} />
+        <div className={styles.shell}>
+          <Sidebar activeId={activeId} />
+          <main id="main" className={styles.main}>
+            <Hero />
+            <Skills />
+            <Experience />
+            <Projects />
+            <LookingFor />
+            <Contact />
+            <Footer />
+          </main>
+        </div>
+      </ReadingModeProvider>
+    </ThemeProvider>
   );
 }

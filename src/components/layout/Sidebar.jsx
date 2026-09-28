@@ -1,6 +1,7 @@
 import { profile } from '../../data/profile.js';
 import NavLinks from './NavLinks.jsx';
 import ReadingToggle from '../ui/ReadingToggle.jsx';
+import ThemeToggle from '../ui/ThemeToggle.jsx';
 import ContactLinks from '../ui/ContactLinks.jsx';
 import styles from './Sidebar.module.css';
 
@@ -16,6 +17,7 @@ export default function Sidebar({ activeId }) {
           <NavLinks activeId={activeId} />
         </nav>
         <ReadingToggle compact />
+        <ThemeToggle compact />
         <div className={styles.contact}>
           <ContactLinks />
         </div>

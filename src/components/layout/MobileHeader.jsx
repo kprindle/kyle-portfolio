@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { profile } from '../../data/profile.js';
 import NavLinks from './NavLinks.jsx';
 import ReadingToggle from '../ui/ReadingToggle.jsx';
+import ThemeToggle from '../ui/ThemeToggle.jsx';
+import ContactLinks from '../ui/ContactLinks.jsx';
 import styles from './MobileHeader.module.css';
 
 export default function MobileHeader({ activeId }) {
@@ -33,6 +35,10 @@ export default function MobileHeader({ activeId }) {
           <NavLinks activeId={activeId} onNavigate={() => setOpen(false)} />
         </nav>
         <ReadingToggle compact />
+        <ThemeToggle compact />
+        <div className={styles.contact}>
+          <ContactLinks />
+        </div>
       </div>
     </header>
   );
