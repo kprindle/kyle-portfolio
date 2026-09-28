@@ -1,0 +1,37 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+@media (min-width: 760px) {
+  .card { padding: var(--space-6); }
+}
+
+.header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+.name { font-size: var(--step-2); font-weight: 700; letter-spacing: -0.015em; }
+.context { color: var(--muted); font-size: var(--step--1); }
+
+.story { margin: var(--space-5) 0 0; display: grid; gap: var(--space-4); }
+
+@media (min-width: 760px) {
+  .story > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: var(--space-4); }
+}
+
+.story dt { font-weight: 700; font-size: var(--step--1); padding-top: 0.15em; }
+.story dd { margin: 0; max-width: 60ch; }
+
+.result dd { font-weight: 600; }
+.result dt { color: var(--signal); }
+
+.tech { margin-top: var(--space-5); display: flex; flex-direction: column; gap: var(--space-5); }
+
+.points {
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 64ch;
+}
+.points li::marker { color: var(--accent); }

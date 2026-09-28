@@ -1,0 +1,46 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--step--1);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.track {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.option {
+  font: inherit;
+  font-size: var(--step--1);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+
+.option:hover { color: var(--ink); }
+
+.option[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.compact .option { padding: 0.35rem 0.7rem; font-size: 0.8rem; }
+.compact .label { font-size: 0.8rem; }

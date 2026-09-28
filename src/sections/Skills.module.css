@@ -1,0 +1,9 @@
+.grid { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+
+@media (min-width: 760px) {
+  .grid { grid-template-columns: 1fr 1fr; column-gap: var(--space-6); }
+}
+
+.group { display: flex; flex-direction: column; gap: var(--space-3); }
+.name { font-size: var(--step-1); font-weight: 700; }
+.description { color: var(--muted); font-size: var(--step--1); }
