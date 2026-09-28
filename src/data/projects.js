@@ -11,7 +11,7 @@ export const projects = [
       problem: 'Loan officers lose time digging through long mortgage guidelines to answer a single question.',
       solution:
         'An AI assistant they simply email. It reads the question, searches the company’s mortgage documentation, and replies with an answer and the source it used. If it isn’t confident in the first answer, it looks again before replying.',
-      result: 'Used by 32 loan officers to cut down research and underwriting time.',
+      result: 'Cuts research and underwriting time by giving officers a cited answer instead of a document to search.',
     },
     technical: {
       points: [
@@ -32,7 +32,7 @@ export const projects = [
       problem: 'Every new loan application meant combing through pages of data before an officer could act on it.',
       solution:
         'A system that reads each new application and emails the loan officer a clear summary, several times a day. Borrowers’ personal details are swapped for placeholder codes before the AI sees anything, then put back in the final email.',
-      result: 'Hundreds of loans summarized for 32 officers, with no raw borrower data ever sent to the AI.',
+      result: 'Hundreds of loans summarized so far, with no raw borrower data ever sent to the AI.',
     },
     technical: {
       points: [
@@ -52,7 +52,7 @@ export const projects = [
         'Businesses selling regulated products have to prove what’s in each product and where it came from, and customers want to check for themselves.',
       solution:
         'A platform where every product gets a QR code. Scan it and you see the product’s history and its official lab results. Businesses manage everything in one place, connected to the checkout systems they already use.',
-      result: 'Dozens of clients onboarded; participating clients saw a 12.5% annual revenue increase.',
+      result: 'Dozens of clients onboarded, each able to prove product authenticity to their own customers via a scan.',
     },
     technical: {
       points: [

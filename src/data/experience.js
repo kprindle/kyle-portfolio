@@ -40,7 +40,7 @@ export const experience = [
       { title: 'Lead Software Engineer (first engineer hired)', dates: 'Jan 2024 – Sep 2025' },
     ],
     summary:
-      'MyTEPI hired me as its first engineer, with no code, servers or systems in place. I built the whole platform, then moved into product leadership as a co-founder.',
+      'MyTEPI hired me as its first engineer, with no code, servers or systems in place. I built the whole platform, and was later named a co-founder in recognition of that work, moving into product leadership.',
     highlights: [
       {
         plain: 'Built the company’s entire software platform from scratch. It still runs on that foundation today.',
@@ -78,7 +78,7 @@ export const earlierExperience = {
   title: 'Valet Supervisor',
   dates: '2020 – 2024',
   summary:
-    'Promoted from valet to supervisor and placed at the company’s highest-revenue location, the Grand Bohemian Hotel in uptown Charlotte. Led teams of 8, trained dozens of new hires, and handled guest issues across a 300-room hotel, restaurant and rooftop bar. Worked full-time through college.',
+    'Promoted from valet to supervisor and placed at the company’s highest-revenue location, the Grand Bohemian Hotel in uptown Charlotte. Led teams of 8, trained dozens of new hires, and handled guest issues across a 300-room hotel, restaurant and rooftop bar. Worked full-time through college, and stayed on after graduating in 2022 while searching a tight tech market for the right engineering role.',
 };
 
 export const education = {
