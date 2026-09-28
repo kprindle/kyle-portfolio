@@ -10,10 +10,6 @@ export const lookingFor = {
       title: 'Senior full-stack engineer',
       note: 'Owning features end to end, from the screens people use to the systems and cloud setup behind them.',
     },
-    {
-      title: 'Engineering manager',
-      note: 'Leading a small team, hiring and mentoring engineers, and keeping engineering tied to business goals.',
-    },
   ],
   details: [
     { label: 'Employment', value: 'Full-time (W-2)' },
