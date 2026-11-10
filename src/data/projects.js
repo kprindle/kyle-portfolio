@@ -4,6 +4,27 @@
  */
 export const projects = [
   {
+    id: 'discover-your-color',
+    name: 'Discover Your Color',
+    context: 'MyTEPI, 2024 – present',
+    plain: {
+      problem:
+        'Businesses selling regulated products have to prove what’s in each product and where it came from, and customers want to check for themselves.',
+      solution:
+        'A platform where every product gets a QR code. Scan it and you see the product’s history and its official lab results. Businesses manage everything in one place, connected to the checkout systems they already use.',
+      result: 'Dozens of clients onboarded, each able to prove product authenticity to their own customers via a scan.',
+    },
+    technical: {
+      points: [
+        'QR-code chain of custody linking each product to its verified records.',
+        'Certificate of Analysis (COA) ingestion and management across hundreds of documents per client.',
+        'Integrations with client point-of-sale systems.',
+        'React front end and Node.js/TypeScript back end on AWS (S3, CloudFront, RDS, Cognito, Amplify, Route 53) and Heroku.',
+      ],
+      stack: ['React', 'Node.js', 'TypeScript', 'AWS', 'Heroku', 'POS integrations'],
+    },
+  },
+  {
     id: 'loan-guru',
     name: 'Loan Guru',
     context: 'GoPrime Mortgage, 2026',
@@ -15,13 +36,12 @@ export const projects = [
     },
     technical: {
       points: [
-        'Two-attempt RAG pipeline against a Qdrant vector store of mortgage documentation, with cited sources in every reply.',
-        'Weighted confidence scoring across accuracy, relevance and completeness decides whether to answer or retry.',
+        'Inbound handling and threaded replies through the Microsoft Graph API, including BCC routing; fixed production issues with filter/sort conflicts, deduplication, rate limiting and conversation IDs.',
+        'FastAPI service over a Qdrant vector store of mortgage documentation on a Linux EC2 instance, with n8n workflows on Windows Server.',
+        'Two-attempt RAG pipeline with cited sources; weighted confidence scoring across accuracy, relevance and completeness decides whether to answer or retry.',
         'Intent classification routes each email; a conversational fallback agent handles anything that isn’t a guideline question.',
-        'Inbound handling and threaded replies through the Microsoft Graph API, including BCC routing.',
-        'Runs on n8n (Windows Server) with Qdrant + FastAPI on a Linux EC2 instance.',
       ],
-      stack: ['n8n', 'RAG', 'Qdrant', 'FastAPI', 'Microsoft Graph API', 'AWS EC2', 'LLM APIs'],
+      stack: ['FastAPI', 'Microsoft Graph API', 'AWS EC2', 'Qdrant', 'n8n', 'RAG', 'LLM APIs'],
     },
   },
   {
@@ -41,27 +61,6 @@ export const projects = [
         'Model output is detokenized and delivered as a formatted email to the assigned loan officer.',
       ],
       stack: ['Encompass', 'Anthropic Claude API', 'PII tokenization', 'Email automation'],
-    },
-  },
-  {
-    id: 'discover-your-color',
-    name: 'Discover Your Color',
-    context: 'MyTEPI, 2024 – present',
-    plain: {
-      problem:
-        'Businesses selling regulated products have to prove what’s in each product and where it came from, and customers want to check for themselves.',
-      solution:
-        'A platform where every product gets a QR code. Scan it and you see the product’s history and its official lab results. Businesses manage everything in one place, connected to the checkout systems they already use.',
-      result: 'Dozens of clients onboarded, each able to prove product authenticity to their own customers via a scan.',
-    },
-    technical: {
-      points: [
-        'QR-code chain of custody linking each product to its verified records.',
-        'Certificate of Analysis (COA) ingestion and management across hundreds of documents per client.',
-        'Integrations with client point-of-sale systems.',
-        'React front end and Node.js/TypeScript back end on AWS (S3, CloudFront, RDS, Cognito, Amplify, Route 53) and Heroku.',
-      ],
-      stack: ['React', 'Node.js', 'TypeScript', 'AWS', 'Heroku', 'POS integrations'],
     },
   },
   {
