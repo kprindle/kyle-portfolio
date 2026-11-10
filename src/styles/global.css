@@ -202,6 +202,34 @@ a:hover > .arrow,
   color: var(--fg-subtle);
 }
 
+/* Dark in both themes (the dark bands and the footer): remaps the theme tokens to the band colors, so anything
+   inside (cards, icon tiles, links, focus rings) turns dark without its own styles. */
+.on-dark {
+  --bg: var(--band-bg);
+  --surface: var(--band-surface);
+  --surface-2: var(--band-bg);
+  --border: var(--band-border);
+  --border-strong: #3a4a60;
+  --fg: var(--band-fg);
+  --fg-muted: var(--band-muted);
+  --fg-subtle: var(--band-muted);
+  --accent: var(--band-accent);
+  --accent-hover: #c0d3eb;
+  --accent-soft: rgb(171 192 219 / 0.12);
+  --accent-fg: #0b1119;
+  --ring: var(--band-accent);
+  --brand-2: var(--band-brass);
+  --signal: #6fcf8f;
+  --signal-soft: #10291b;
+  --selection: #283d58;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), inset 0 1px 0 rgb(255 255 255 / 0.03);
+  --shadow-md: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.3), 0 24px 48px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+  background-color: var(--band-bg);
+  color: var(--fg);
+}
+
 /* Visually hidden, still read by screen readers. */
 .sr-only {
   position: absolute;
