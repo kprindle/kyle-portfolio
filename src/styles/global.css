@@ -202,8 +202,9 @@ a:hover > .arrow,
   color: var(--fg-subtle);
 }
 
-/* Dark in both themes (the dark bands and the footer): remaps the theme tokens to the band colors, so anything
-   inside (cards, icon tiles, links, focus rings) turns dark without its own styles. */
+/* Dark in both themes (the header, the dark bands and the footer): remaps the theme tokens to the band colors, so
+   anything inside (cards, icon tiles, toggles, links, focus rings) turns dark without its own styles. It sets no
+   background: each user paints its own (the header stays frosted). */
 .on-dark {
   --bg: var(--band-bg);
   --surface: var(--band-surface);
@@ -226,7 +227,6 @@ a:hover > .arrow,
   --shadow-md: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);
   --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.3), 0 24px 48px rgb(0 0 0 / 0.5);
   color-scheme: dark;
-  background-color: var(--band-bg);
   color: var(--fg);
 }
 

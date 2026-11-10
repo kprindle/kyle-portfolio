@@ -10,7 +10,7 @@ import styles from './SiteHeader.module.css';
 
 const sections = navItems.filter((item) => item.id !== 'intro');
 
-/** Sticky, frosted header. Full nav at 1024px and up; a menu panel below that. */
+/** Sticky, frosted header, dark in both themes. Full nav at 1024px and up; a menu panel below that. */
 export default function SiteHeader({ activeId }) {
   const [open, setOpen] = useState(false);
 
@@ -27,7 +27,7 @@ export default function SiteHeader({ activeId }) {
   }, [open]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} on-dark`}>
       <div className={`wrap ${styles.bar}`}>
         <a href="#intro" className={styles.brand}>
           <Monogram />
