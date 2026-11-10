@@ -6,32 +6,6 @@
  */
 export const experience = [
   {
-    company: 'GoPrime Mortgage',
-    engagement: 'Contract',
-    location: 'Remote',
-    roles: [{ title: 'Full-Stack Developer & AI Consultant', dates: 'Mar 2026 – Present' }],
-    summary: 'I build AI tools that help GoPrime’s loan officers find answers and review new loans faster.',
-    highlights: [
-      {
-        plain:
-          'Built an AI assistant that 32 loan officers can email with mortgage questions. It replies with an answer and shows exactly which guideline it came from.',
-        technical:
-          'Built Loan Guru: an n8n email agent with a two-attempt RAG pipeline over a Qdrant vector store, weighted confidence scoring, intent classification and Microsoft Graph replies.',
-      },
-      {
-        plain:
-          'Automated summaries of every new loan application, emailed to officers several times a day, while keeping borrowers’ personal details away from the AI.',
-        technical:
-          'Automated Encompass loan-summary emails several times daily, with PII tokenization so borrower data never reaches the Anthropic API in raw form.',
-      },
-      {
-        plain: 'Found and fixed problems in the live systems quickly so officers weren’t left waiting on answers.',
-        technical:
-          'Resolved production issues in the Microsoft Graph integration: filter/sort conflicts, deduplication, API rate limiting and conversation-ID handling.',
-      },
-    ],
-  },
-  {
     company: 'MyTEPI',
     engagement: 'Full-time',
     location: 'Remote',
@@ -67,6 +41,33 @@ export const experience = [
         plain: 'Set product direction and work with founders, outside developers, testing labs and physician partners.',
         technical:
           'Own the product roadmap and coordinate across founders, external developers, testing labs and physician organizations.',
+      },
+    ],
+  },
+  {
+    company: 'GoPrime Mortgage',
+    engagement: 'Contract',
+    location: 'Remote',
+    roles: [{ title: 'Full-Stack Developer & AI Consultant', dates: 'Mar 2026 – Present' }],
+    summary:
+      'I build and run the back-end services and integrations GoPrime’s loan officers use to find answers and review new loans faster, including the AI features inside them.',
+    highlights: [
+      {
+        plain:
+          'Built an AI assistant that 32 loan officers can email with mortgage questions. It replies with an answer and shows exactly which guideline it came from.',
+        technical:
+          'Built and deployed Loan Guru: Microsoft Graph API email handling, a FastAPI + Qdrant service on Linux EC2 and n8n workflows on Windows Server, with a two-attempt RAG pipeline and confidence scoring.',
+      },
+      {
+        plain:
+          'Automated summaries of every new loan application, emailed to officers several times a day, while keeping borrowers’ personal details away from the AI.',
+        technical:
+          'Built a scheduled pipeline that pulls new applications from Encompass and emails summaries several times daily, with PII tokenization so borrower data never reaches the Anthropic API in raw form.',
+      },
+      {
+        plain: 'Found and fixed problems in the live systems quickly so officers weren’t left waiting on answers.',
+        technical:
+          'Resolved production issues in the Microsoft Graph integration: filter/sort conflicts, deduplication, API rate limiting and conversation-ID handling.',
       },
     ],
   },
