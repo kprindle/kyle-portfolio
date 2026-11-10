@@ -5,7 +5,6 @@ import ReadingToggle from '../ui/ReadingToggle.jsx';
 import ThemeToggle from '../ui/ThemeToggle.jsx';
 import ContactLinks from '../ui/ContactLinks.jsx';
 import Icon from '../ui/Icon.jsx';
-import Monogram from '../ui/Monogram.jsx';
 import styles from './SiteHeader.module.css';
 
 const sections = navItems.filter((item) => item.id !== 'intro');
@@ -30,8 +29,7 @@ export default function SiteHeader({ activeId }) {
     <header className={`${styles.header} on-dark`}>
       <div className={`wrap ${styles.bar}`}>
         <a href="#intro" className={styles.brand}>
-          <Monogram />
-          <span>{profile.name}</span>
+          {profile.name}
         </a>
 
         <nav aria-label="Sections" className={styles.nav}>
