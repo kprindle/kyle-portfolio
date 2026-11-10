@@ -13,7 +13,7 @@ export const lookingFor = {
   ],
   details: [
     { label: 'Employment', value: 'Full-time (W-2)' },
-    { label: 'Location', value: 'Remote in the US, or on-site/hybrid in Wilmington, Charlotte or Raleigh, NC' },
+    { label: 'Location', value: 'Remote in the US, or on-site/hybrid in New York City, or Charlotte or Raleigh, NC' },
     {
       label: 'Industries',
       value: 'Open to any. Especially interested in SaaS startups, fintech and mortgage, and compliance or traceability software.',
