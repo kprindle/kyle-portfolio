@@ -1,23 +1,47 @@
 .section {
-  padding-top: var(--space-7);
-  border-top: 1px solid var(--line);
-  margin-top: var(--space-7);
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.tint {
+  background: var(--surface-2);
+  border-block: 1px solid var(--border);
+}
+
+/* The dark band: its own colors in both themes, plus a soft glow along the top edge. */
+.band {
+  --fg: var(--band-fg);
+  --fg-muted: var(--band-muted);
+  --fg-subtle: var(--band-muted);
+  --border: var(--band-border);
+  --surface: var(--band-surface);
+  --accent: var(--band-accent);
+  --ring: var(--band-accent);
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgb(88 144 205 / 0.16), transparent 70%),
+    var(--band-bg);
+  color: var(--fg);
+  isolation: isolate;
 }
 
 .header {
-  margin-bottom: var(--space-6);
-  max-width: var(--measure);
+  max-width: 44rem;
+  margin-bottom: clamp(32px, 5vw, 56px);
 }
 
 .title {
-  font-size: var(--step-3);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.12;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .intro {
-  margin-top: var(--space-3);
-  color: var(--muted);
+  margin-top: 14px;
+  color: var(--fg-muted);
   font-size: var(--step-1);
-  line-height: 1.5;
+  line-height: 1.55;
+  text-wrap: pretty;
 }

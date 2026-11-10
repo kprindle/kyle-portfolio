@@ -1,57 +1,213 @@
-*, *::before, *::after { box-sizing: border-box; }
+@import '@fontsource-variable/public-sans/wght.css';
+@import '@fontsource-variable/source-serif-4/wght.css';
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + var(--space-3));
-  -webkit-text-size-adjust: 100%;
+/* Base styles and shared utilities. Tokens are in tokens.css, motion in motion.css. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (min-width: 960px) {
-  html { scroll-padding-top: var(--space-5); }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* The sticky header never covers an anchor target or a focused element. */
+  scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 16px);
 }
 
 body {
   margin: 0;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font);
+  color: var(--fg);
+  font-family: var(--font-ui);
   font-size: var(--step-0);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { line-height: 1.15; margin: 0; }
-p { margin: 0; }
-ul, ol { margin: 0; padding: 0; }
-img { max-width: 100%; display: block; }
+::selection {
+  background: var(--selection);
+}
 
-a { color: var(--accent); text-underline-offset: 0.18em; }
-a:hover { text-decoration-thickness: 2px; }
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
 
 :focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: var(--radius-sm);
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .wrap {
+    padding: 0 24px;
+  }
 }
 
 .skip-link {
   position: absolute;
-  left: var(--space-4);
+  left: 16px;
   top: -100px;
   z-index: 100;
   background: var(--accent);
-  color: var(--accent-ink);
-  padding: var(--space-2) var(--space-4);
+  color: var(--accent-fg);
+  padding: 8px 16px;
   border-radius: var(--radius-sm);
   font-weight: 600;
 }
-.skip-link:focus { top: var(--space-4); }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Buttons: .button is primary, .button.secondary is the quiet version. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 46px;
+  padding: 0 1.2em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-fg);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-1) var(--ease-out),
+    border-color var(--dur-1) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out),
+    transform var(--dur-1) var(--ease-out);
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  color: var(--accent-fg);
+  box-shadow: var(--shadow-md);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button.secondary {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--fg);
+}
+
+.button.secondary:hover {
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+  box-shadow: var(--shadow-card);
+}
+
+/* An arrow icon that nudges forward when its button or link is hovered. */
+.arrow {
+  flex: none;
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+a:hover > .arrow,
+.button:hover > .arrow {
+  transform: translateX(3px);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* Cards that lift on hover, only with a mouse or trackpad. */
+@media (hover: hover) and (pointer: fine) {
+  .lift {
+    transition:
+      transform var(--dur-2) var(--ease-out),
+      box-shadow var(--dur-2) var(--ease-out),
+      border-color var(--dur-2) var(--ease-out);
   }
+  .lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in oklab, var(--accent) 25%, var(--border));
+  }
+}
+
+/* An icon in a small tinted tile. */
+.icon-tile {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Small uppercase label above a heading. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

@@ -1,37 +1,81 @@
 .roles {
   list-style: none;
   display: grid;
-  gap: var(--space-5);
-  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 @media (min-width: 760px) {
-  .roles { grid-template-columns: repeat(3, 1fr); }
+  .roles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
+/* Gradient hairline border: the surface fills the padding box, the gradient shows in the 1px border. */
 .role {
-  padding-top: var(--space-4);
-  border-top: 3px solid var(--accent);
+  padding: 28px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(var(--band-surface), var(--band-surface)) padding-box,
+    linear-gradient(135deg, rgb(171 192 219 / 0.55), rgb(201 163 85 / 0.35) 45%, rgb(171 192 219 / 0.08)) border-box;
 }
 
-.role h3 { font-size: var(--step-1); font-weight: 700; }
-.role p { margin-top: var(--space-2); color: var(--muted); font-size: var(--step--1); line-height: 1.55; }
+.roleIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgb(201 163 85 / 0.14);
+  color: var(--band-brass);
+}
+
+.role h3 {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.role p {
+  margin-top: 8px;
+  color: var(--band-muted);
+  line-height: 1.6;
+}
 
 .details {
-  margin: var(--space-6) 0 0;
-  max-width: var(--measure);
   display: grid;
-  gap: var(--space-4);
+  gap: 16px;
+  margin: 20px 0 0;
 }
 
-.row {
-  display: grid;
-  gap: var(--space-1);
+@media (min-width: 900px) {
+  .details {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-@media (min-width: 640px) {
-  .row { grid-template-columns: 9rem 1fr; gap: var(--space-4); }
+.detail {
+  padding: 20px 22px;
+  border: 1px solid var(--band-border);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--band-surface) 60%, transparent);
 }
 
-.row dt { font-weight: 700; }
-.row dd { margin: 0; color: var(--muted); }
+.detail dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--band-accent);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detail dd {
+  margin: 8px 0 0;
+  color: var(--band-fg);
+  line-height: 1.55;
+}

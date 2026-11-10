@@ -21,18 +21,20 @@ src/
     experience.js       Jobs (each bullet has plain + technical versions), earlier work, education
     projects.js         Project write-ups (plain story + technical notes + stack)
     skills.js           Skill groups
-    navigation.js       Sidebar/menu sections
+    navigation.js       Header/menu sections
   context/
     ReadingModeContext.jsx   "Plain English" vs "Technical detail" toggle state
   hooks/
     useActiveSection.js      Highlights the current section in the nav
+    useRevealFallback.js     Scroll reveals for browsers without scroll-driven animations
   components/
-    layout/             Sidebar, MobileHeader, NavLinks, Section wrapper, Footer
-    ui/                 ReadingToggle, TagList, ContactLinks
+    layout/             SiteHeader (sticky header + phone menu), Section wrapper, Footer
+    ui/                 ReadingToggle, ThemeToggle, TagList, ContactLinks, Icon (Lucide paths), Monogram
   sections/             Hero, LookingFor, Experience, Projects, Skills, Contact
   styles/
-    tokens.css          Colors, type scale, spacing (light + dark)
-    global.css          Base element styles, focus, reduced motion
+    tokens.css          Colors, fonts, motion, spacing (light + dark; Topmast palette)
+    global.css          Fonts, base styles, buttons, cards
+    motion.css          Load-in and scroll reveals, reduced motion
 ```
 
 Components use CSS Modules (`*.module.css`) so styles stay scoped to each file.

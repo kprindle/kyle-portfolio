@@ -1,46 +1,56 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 8px;
 }
 
 .label {
-  font-size: var(--step--1);
-  color: var(--muted);
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fg-subtle);
 }
 
 .track {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  padding: 4px;
-  gap: 4px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
   width: fit-content;
+  padding: 3px;
+  gap: 2px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
 }
 
 .option {
-  font: inherit;
-  font-size: var(--step--1);
-  font-weight: 600;
-  padding: 0.5rem 1rem;
+  min-height: 38px;
+  padding: 0 16px;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: background-color 160ms ease, color 160ms ease;
+  color: var(--fg-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
   white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    color var(--dur-1) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out);
 }
 
-.option:hover { color: var(--ink); }
-
-.option[aria-pressed="true"] {
-  background: var(--accent);
-  color: var(--accent-ink);
+.option:hover {
+  color: var(--fg);
 }
 
-.compact .option { padding: 0.35rem 0.7rem; font-size: 0.8rem; }
-.compact .label { font-size: 0.8rem; }
+.option[aria-pressed='true'] {
+  background: var(--surface);
+  color: var(--fg);
+  box-shadow: var(--shadow-card), 0 0 0 1px var(--border);
+}
+
+.compact .option {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 0.82rem;
+}
