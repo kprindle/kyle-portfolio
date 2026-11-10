@@ -8,7 +8,7 @@
   border-block: 1px solid var(--border);
 }
 
-/* The dark band: its own colors in both themes, plus a soft glow along the top edge. */
+/* The band: its own colors (light or dark with the theme), plus a soft glow along the top edge. */
 .band {
   --fg: var(--band-fg);
   --fg-muted: var(--band-muted);
@@ -18,7 +18,7 @@
   --accent: var(--band-accent);
   --ring: var(--band-accent);
   background:
-    radial-gradient(60% 50% at 50% 0%, rgb(88 144 205 / 0.16), transparent 70%),
+    radial-gradient(60% 50% at 50% 0%, var(--band-glow), transparent 70%),
     var(--band-bg);
   color: var(--fg);
   isolation: isolate;
