@@ -2,7 +2,7 @@
 export const profile = {
   name: 'Kyle Prindle',
   title: 'Full-stack engineer & product leader',
-  location: 'Wilmington, NC',
+  location: 'Charlotte, NC',
   email: 'kylegprindle@gmail.com',
   linkedin: 'https://www.linkedin.com/in/kyle-prindle-475065203',
   linkedinLabel: 'linkedin.com/in/kyle-prindle',
