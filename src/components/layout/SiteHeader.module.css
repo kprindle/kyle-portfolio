@@ -1,11 +1,12 @@
-/* Its height never changes, so scrolling causes no layout shift; only the shadow follows the scroll position. */
+/* Dark (.on-dark) and frosted, mostly opaque so it reads as navy over the light sections too. Its height never
+   changes, so scrolling causes no layout shift; only the shadow follows the scroll position. */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
   border-bottom: 1px solid var(--border);
-  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  background: color-mix(in oklab, var(--bg) 90%, transparent);
   -webkit-backdrop-filter: blur(12px) saturate(1.4);
   backdrop-filter: blur(12px) saturate(1.4);
 }
