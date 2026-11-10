@@ -12,20 +12,29 @@
     animation-delay: calc(var(--i, 0) * 80ms + 60ms);
   }
 
-  /* Scroll reveals: fade and rise as the element enters the viewport, tied to scroll position. */
+  /* Scroll reveals, tied to scroll position: each block fades and rises in as it enters from the bottom, then fades
+     and drifts up as it leaves past the top. Scrolling back up plays it in reverse. Two animations on one element:
+     `sink` only has a `to` keyframe, so until its range starts it passes through whatever `rise` produced. */
   @supports (animation-timeline: view()) {
     .reveal,
     .reveal-stagger > * {
-      animation: rise var(--ease-out) both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 40%;
+      animation:
+        rise var(--ease-out) both,
+        sink var(--ease-in-out) both;
+      animation-timeline: view(), view();
+      animation-range:
+        entry 0% entry 40%,
+        exit 55% exit 100%;
     }
     .reveal-stagger > * {
-      animation-range: entry calc(var(--i, 0) * 5%) entry calc(40% + var(--i, 0) * 5%);
+      animation-range:
+        entry calc(var(--i, 0) * 5%) entry calc(40% + var(--i, 0) * 5%),
+        exit 55% exit 100%;
     }
   }
 
-  /* Fallback: useRevealFallback adds .js-reveal only where scroll-driven animations are missing. */
+  /* Fallback: useRevealFallback adds .js-reveal only where scroll-driven animations are missing, and sets
+     data-shown while a block is on screen (data-above once it has scrolled off the top). */
   .js-reveal .reveal,
   .js-reveal .reveal-stagger > * {
     transition:
@@ -37,6 +46,11 @@
   .js-reveal .reveal-stagger > :not([data-shown]) {
     opacity: 0;
     translate: 0 24px;
+    transition-delay: 0ms;
+  }
+  .js-reveal .reveal[data-above]:not([data-shown]),
+  .js-reveal .reveal-stagger > [data-above]:not([data-shown]) {
+    translate: 0 -24px;
   }
 }
 
@@ -49,6 +63,13 @@
   to {
     opacity: 1;
     translate: none;
+  }
+}
+
+@keyframes sink {
+  to {
+    opacity: 0;
+    translate: 0 -24px;
   }
 }
 
