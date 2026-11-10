@@ -25,25 +25,34 @@ function TechnicalView({ technical, name }) {
   return (
     <div className={styles.tech}>
       <ul className={styles.points}>
-        {technical.points.map((point) => <li key={point}>{point}</li>)}
+        {technical.points.map((point) => (
+          <li key={point}>{point}</li>
+        ))}
       </ul>
       <TagList items={technical.stack} label={`${name} tech stack`} />
     </div>
   );
 }
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, featured = false }) {
   const { isTechnical } = useReadingMode();
 
   return (
-    <article className={styles.card} aria-labelledby={`${project.id}-title`}>
+    <article
+      className={`card lift reveal ${styles.card} ${featured ? styles.featured : ''}`}
+      aria-labelledby={`${project.id}-title`}
+    >
       <header className={styles.header}>
-        <h3 id={`${project.id}-title`} className={styles.name}>{project.name}</h3>
-        <p className={styles.context}>{project.context}</p>
+        <p className="eyebrow">{project.context}</p>
+        <h3 id={`${project.id}-title`} className={styles.name}>
+          {project.name}
+        </h3>
       </header>
-      {isTechnical
-        ? <TechnicalView technical={project.technical} name={project.name} />
-        : <PlainView plain={project.plain} />}
+      {isTechnical ? (
+        <TechnicalView technical={project.technical} name={project.name} />
+      ) : (
+        <PlainView plain={project.plain} />
+      )}
     </article>
   );
 }

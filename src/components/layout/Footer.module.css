@@ -1,7 +1,20 @@
 .footer {
-  margin-top: var(--space-7);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: var(--step--1);
+  border-top: 1px solid var(--border);
+  padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px));
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-subtle);
+  font-size: 0.9rem;
 }

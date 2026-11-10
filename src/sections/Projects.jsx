@@ -10,9 +10,9 @@ export default function Projects() {
       title="Selected projects"
       intro="The code for these is private (client and company work, plus my own products), so I can’t link to it publicly. I’m happy to walk through any of them in an interview."
     >
-      <div className={styles.list}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      <div className={styles.grid}>
+        {projects.map((project, i) => (
+          <ProjectCard key={project.id} project={project} featured={i === 0} />
         ))}
       </div>
     </Section>

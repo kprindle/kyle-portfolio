@@ -1,9 +1,57 @@
-.grid { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
-
-@media (min-width: 760px) {
-  .grid { grid-template-columns: 1fr 1fr; column-gap: var(--space-6); }
+/* Bento grid: 1 column on phones, 2 on tablets, 6 tracks on desktop (3 + 3, then 2 + 2 + 2). */
+.grid {
+  display: grid;
+  gap: 16px;
 }
 
-.group { display: flex; flex-direction: column; gap: var(--space-3); }
-.name { font-size: var(--step-1); font-weight: 700; }
-.description { color: var(--muted); font-size: var(--step--1); }
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .group:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .group {
+    grid-column: span 2;
+  }
+  .group:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
+  .group:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  font-size: 1.1rem;
+}
+
+.description {
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.group > ul {
+  margin-top: auto;
+  padding-top: 4px;
+}

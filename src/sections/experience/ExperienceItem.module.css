@@ -1,40 +1,111 @@
 .item {
-  position: relative;
-  padding-left: var(--space-5);
-  border-left: 2px solid var(--line);
-  max-width: var(--measure);
+  display: grid;
+  gap: 24px;
+  padding: clamp(24px, 3.5vw, 40px);
 }
 
-.item::before {
-  content: "";
+@media (min-width: 900px) {
+  .item {
+    grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+
+.company {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.meta {
+  margin-top: 4px;
+  color: var(--fg-subtle);
+  font-size: 0.9rem;
+}
+
+/* Roles as a small vertical timeline: a dot per role, joined by a line. */
+.roles {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.role {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.role::before {
+  content: '';
   position: absolute;
-  left: -7px;
-  top: 0.45rem;
-  width: 12px;
-  height: 12px;
+  left: 0;
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--bg);
+  background: var(--surface);
   border: 2px solid var(--accent);
 }
 
-.head { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--space-3); }
-.company { font-size: var(--step-2); font-weight: 700; letter-spacing: -0.015em; }
-.meta { color: var(--muted); font-size: var(--step--1); }
-
-.roles { list-style: none; margin-top: var(--space-2); display: flex; flex-direction: column; gap: 2px; }
-.role { display: flex; flex-wrap: wrap; column-gap: var(--space-3); }
-.roleTitle { font-weight: 600; }
-.roleDates { color: var(--muted); }
-
-.summary { margin-top: var(--space-4); }
-
-.highlights {
-  margin-top: var(--space-3);
-  padding-left: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  color: var(--muted);
+.role:first-child::before {
+  background: var(--accent);
 }
 
-.highlights li::marker { color: var(--accent); }
+.role:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: calc(0.5em + 11px);
+  bottom: -12px;
+  width: 1px;
+  background: var(--border-strong);
+}
+
+.roleTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.roleDates {
+  color: var(--fg-subtle);
+  font-size: 0.86rem;
+}
+
+.summary {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.highlights {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.highlights li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--brand-2);
+  transform: rotate(45deg);
+}
