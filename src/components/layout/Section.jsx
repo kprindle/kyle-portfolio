@@ -1,12 +1,13 @@
 import styles from './Section.module.css';
 
 /**
- * A page section. `tone` sets the background: 'plain' (page), 'tint' (a light band) or 'band' (the dark navy band).
+ * A page section. `tone` sets the background: 'plain' (page), 'tint' (a light band) or 'band' (the dark navy band,
+ * dark in both themes).
  */
 export default function Section({ id, title, intro, tone = 'plain', children }) {
   const headingId = `${id}-heading`;
   return (
-    <section id={id} aria-labelledby={headingId} className={`${styles.section} ${styles[tone]}`}>
+    <section id={id} aria-labelledby={headingId} className={`${styles.section} ${styles[tone]} ${tone === 'band' ? 'on-dark' : ''}`}>
       <div className="wrap">
         <header className={`${styles.header} reveal`}>
           <h2 id={headingId} className={styles.title}>

@@ -8,7 +8,7 @@ export default function Experience() {
   return (
     <Section
       id="experience"
-      tone="tint"
+      tone="band"
       title="Experience"
       intro="Most recent first. Use the detail toggle to switch between a plain summary and the technical version."
     >

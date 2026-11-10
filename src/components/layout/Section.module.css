@@ -8,19 +8,11 @@
   border-block: 1px solid var(--border);
 }
 
-/* The dark band: its own colors in both themes, plus a soft glow along the top edge. */
+/* The dark band (used with the global .on-dark class): a soft glow along the top edge. */
 .band {
-  --fg: var(--band-fg);
-  --fg-muted: var(--band-muted);
-  --fg-subtle: var(--band-muted);
-  --border: var(--band-border);
-  --surface: var(--band-surface);
-  --accent: var(--band-accent);
-  --ring: var(--band-accent);
   background:
     radial-gradient(60% 50% at 50% 0%, rgb(88 144 205 / 0.16), transparent 70%),
     var(--band-bg);
-  color: var(--fg);
   isolation: isolate;
 }
 
