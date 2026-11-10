@@ -29,7 +29,7 @@ src/
     useRevealFallback.js     Scroll reveals for browsers without scroll-driven animations
   components/
     layout/             SiteHeader (sticky header + phone menu), Section wrapper, Footer
-    ui/                 ReadingToggle, ThemeToggle, TagList, ContactLinks, Icon (Lucide paths), Monogram
+    ui/                 ReadingToggle, ThemeToggle, TagList, ContactLinks, Icon (Lucide paths)
   sections/             Hero, LookingFor, Experience, Projects, Skills, Contact
   styles/
     tokens.css          Colors, fonts, motion, spacing (light + dark; Topmast palette)
