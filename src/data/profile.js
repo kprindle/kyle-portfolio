@@ -10,7 +10,7 @@ export const profile = {
   availability: 'Open to full-time roles',
   headline: 'I build web platforms end to end, from the screens people use to the APIs, databases and cloud setup behind them.',
   intro:
-    'I was the first engineer at MyTEPI, where I built the whole platform from nothing (React, Node.js, TypeScript and AWS) and now lead product as a co-founder. I also build back-end services and integrations for GoPrime Mortgage, including AI features its loan officers use every day. I like work where the result is easy to point to: software people rely on, faster decisions, and clients who grow.',
+    'I was the first engineer at MyTEPI, where I built the whole platform from nothing (React, Node.js, TypeScript and AWS) and now lead product as a co-founder. I also build back-end services and integrations for GoPrime Mortgage, including AI features its loan officers use every day. On my own time I’m building Topmast, a multi-tenant job-search app now in private beta. I like work where the result is easy to point to: software people rely on, faster decisions, and clients who grow.',
   proofPoints: [
     { value: '1st', label: 'engineer at MyTEPI, where I built the whole tech stack from scratch' },
     { value: '12.5%', label: 'yearly revenue increase for MyTEPI clients on a platform I built' },

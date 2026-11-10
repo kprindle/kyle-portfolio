@@ -8,7 +8,7 @@ export default function Projects() {
     <Section
       id="projects"
       title="Selected projects"
-      intro="The code for these is private client and company work, so I can’t link to it publicly. I’m happy to walk through any of them in an interview."
+      intro="The code for these is private (client and company work, plus my own products), so I can’t link to it publicly. I’m happy to walk through any of them in an interview."
     >
       <div className={styles.list}>
         {projects.map((project) => (
