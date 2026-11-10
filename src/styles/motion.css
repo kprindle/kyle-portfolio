@@ -12,23 +12,24 @@
     animation-delay: calc(var(--i, 0) * 80ms + 60ms);
   }
 
-  /* Scroll reveals, tied to scroll position: each block fades and rises in as it enters from the bottom, then fades
-     and drifts up as it leaves past the top. Scrolling back up plays it in reverse. Two animations on one element:
+  /* Scroll fades, tied to scroll position: each block fades and rises in as it enters from the bottom, then fades
+     and drifts up as it leaves past the top, as mirror images (same easing, ranges mirrored: the first 45% of the
+     entry, the last 45% of the exit). Scrolling back up plays it in reverse. Two animations on one element:
      `sink` only has a `to` keyframe, so until its range starts it passes through whatever `rise` produced. */
   @supports (animation-timeline: view()) {
     .reveal,
     .reveal-stagger > * {
       animation:
-        rise var(--ease-out) both,
+        rise var(--ease-in-out) both,
         sink var(--ease-in-out) both;
       animation-timeline: view(), view();
       animation-range:
-        entry 0% entry 40%,
+        entry 0% entry 45%,
         exit 55% exit 100%;
     }
     .reveal-stagger > * {
       animation-range:
-        entry calc(var(--i, 0) * 5%) entry calc(40% + var(--i, 0) * 5%),
+        entry calc(var(--i, 0) * 5%) entry calc(45% + var(--i, 0) * 5%),
         exit 55% exit 100%;
     }
   }
